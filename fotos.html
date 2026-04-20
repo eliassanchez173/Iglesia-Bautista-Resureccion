@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fotos • Iglesia Bautista Resurrección</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="/assets/images/Logo.png" />
+</head>
+<body>
+
+  <div class="modal-backdrop" id="alertBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alertTitle">
+      <h2 id="alertTitle">Aviso Importante</h2>
+      <p id="alertMessage"></p>
+      <button class="btn btn-primary" id="alertCloseBtn" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a href="index.html" class="brand">
+      <span class="brand-title">Iglesia Bautista</span>
+      <span class="brand-subtitle">Resurrección</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav">
+      <a class="nav-link" href="index.html">Inicio</a>
+      <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+      <a class="nav-link" href="actividades.html">Actividades</a>
+      <a class="nav-link" href="calendario.html">Calendario</a>
+      <a class="nav-link active" href="fotos.html">Fotos</a>
+      <a class="nav-link nav-cta" href="donaciones.html">Donar</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Fotos</h1>
+    <p>Momentos y memorias de nuestra familia en Cristo.</p>
+  </div>
+
+  <main>
+    <section class="section">
+      <p class="section-label">Galería</p>
+      <h2>Álbumes</h2>
+      <p class="section-subtitle">Fotos de retiros, campamentos, bautismos y más. Próximamente se añadirán los enlaces.</p>
+
+      <div class="cards" style="margin-top: 32px;">
+        <div class="card card-accent">
+          <h3>Retiro</h3>
+          <p class="muted">Fotos del retiro congregacional.</p>
+          <div style="margin-top:16px;">
+            <a class="btn btn-outline-dark btn-small" href="#" target="_blank" rel="noreferrer">Ver álbum</a>
+          </div>
+        </div>
+        <div class="card card-accent">
+          <h3>Campamento</h3>
+          <p class="muted">Fotos del campamento de jóvenes.</p>
+          <div style="margin-top:16px;">
+            <a class="btn btn-outline-dark btn-small" href="#" target="_blank" rel="noreferrer">Ver álbum</a>
+          </div>
+        </div>
+        <div class="card card-accent">
+          <h3>Bautismos</h3>
+          <p class="muted">Celebrando nuevas vidas en Cristo.</p>
+          <div style="margin-top:16px;">
+            <a class="btn btn-outline-dark btn-small" href="#" target="_blank" rel="noreferrer">Ver álbum</a>
+          </div>
+        </div>
+        <div class="card card-accent">
+          <h3>Actividades</h3>
+          <p class="muted">Eventos y actividades especiales.</p>
+          <div style="margin-top:16px;">
+            <a class="btn btn-outline-dark btn-small" href="#" target="_blank" rel="noreferrer">Ver álbum</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-name">Iglesia Bautista Resurrección</div>
+    <div class="footer-info">203 Washington Ave, Dumont, NJ 07628 &nbsp;•&nbsp; ibrdnj@gmail.com</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('navToggle').addEventListener('click', () =>
+      document.getElementById('mainNav').classList.toggle('open'));
+  </script>
+</body>
+</html>

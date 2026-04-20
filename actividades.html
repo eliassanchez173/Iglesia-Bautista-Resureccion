@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Iglesia Bautista Resurrección en Dumont, NJ. Cultos los domingos a las 12pm." />
+  <title>Actividades • Iglesia Bautista Resurrección</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="/assets/images/Logo.png" />
+</head>
+<body>
+
+  <div class="modal-backdrop" id="alertBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alertTitle">
+      <h2 id="alertTitle">Aviso Importante</h2>
+      <p id="alertMessage"></p>
+      <button class="btn btn-primary" id="alertCloseBtn" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a href="index.html" class="brand">
+      <span class="brand-title">Iglesia Bautista</span>
+      <span class="brand-subtitle">Resurrección</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav">
+      <a class="nav-link" href="index.html">Inicio</a>
+      <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+      <a class="nav-link active" href="actividades.html">Actividades</a>
+      <a class="nav-link" href="calendario.html">Calendario</a>
+      <a class="nav-link" href="fotos.html">Fotos</a>
+      <a class="nav-link nav-cta" href="donaciones.html">Donar</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Actividades</h1>
+    <p>Servicios, ministerios y todo lo que hacemos juntos como comunidad.</p>
+  </div>
+
+  <main>
+
+    <section class="section">
+      <p class="section-label">Cada semana</p>
+      <h2>Servicios Semanales</h2>
+      <p class="section-subtitle">Presenciales y en línea. Todos son bienvenidos.</p>
+      <div class="cards">
+        <div class="card card-accent">
+          <h3>Culto de Adoración</h3>
+          <p><strong>Domingos</strong> · 12:00 pm</p>
+          <p class="muted" style="margin-top:8px;">En el templo y en línea por YouTube.</p>
+        </div>
+        <div class="card card-accent">
+          <h3>Culto de Oración</h3>
+          <p><strong>Miércoles</strong> · 7:30 pm</p>
+          <p class="muted" style="margin-top:8px;">En el templo y en línea por YouTube.</p>
+        </div>
+        <div class="card card-accent">
+          <h3>Escuela Bíblica</h3>
+          <p><strong>Domingos</strong> · 11:00 am</p>
+          <p class="muted" style="margin-top:8px;">Discipulado bíblico en el templo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="section-inner">
+        <p class="section-label">Comunidad</p>
+        <h2>Ministerios</h2>
+        <p class="section-subtitle">Un lugar donde cada persona puede crecer y servir.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Jóvenes</h3>
+            <p class="muted">Reuniones, retiros y discipulado para la próxima generación.</p>
+          </div>
+          <div class="card">
+            <h3>Niños</h3>
+            <p class="muted">Enseñanza bíblica adaptada por edades, con amor y creatividad.</p>
+          </div>
+          <div class="card">
+            <h3>Damas &amp; Caballeros</h3>
+            <p class="muted">Comunión, estudio de la Palabra y servicio juntos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">Mantente al día</p>
+      <h2>¿Cómo enterarte de eventos?</h2>
+      <div class="card" style="max-width: 600px;">
+        <p>Publicamos anuncios durante los servicios. También puedes consultar nuestro calendario o seguir nuestras redes sociales para estar al tanto de todo lo que se viene.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+          <a class="btn btn-primary btn-small" href="calendario.html">Ver calendario</a>
+          <a class="btn btn-outline-dark btn-small" href="https://www.youtube.com/ibresurreccion" target="_blank" rel="noreferrer">Visitar canal</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-name">Iglesia Bautista Resurrección</div>
+    <div class="footer-info">203 Washington Ave, Dumont, NJ 07628 &nbsp;•&nbsp; ibrdnj@gmail.com</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('navToggle').addEventListener('click', () =>
+      document.getElementById('mainNav').classList.toggle('open'));
+  </script>
+</body>
+</html>

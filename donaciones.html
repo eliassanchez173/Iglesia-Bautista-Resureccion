@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donaciones • Iglesia Bautista Resurrección</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="/assets/images/Logo.png" />
+</head>
+<body>
+
+  <div class="modal-backdrop" id="alertBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alertTitle">
+      <h2 id="alertTitle">Aviso Importante</h2>
+      <p id="alertMessage"></p>
+      <button class="btn btn-primary" id="alertCloseBtn" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a href="index.html" class="brand">
+      <span class="brand-title">Iglesia Bautista</span>
+      <span class="brand-subtitle">Resurrección</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav">
+      <a class="nav-link" href="index.html">Inicio</a>
+      <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+      <a class="nav-link" href="actividades.html">Actividades</a>
+      <a class="nav-link" href="calendario.html">Calendario</a>
+      <a class="nav-link" href="fotos.html">Fotos</a>
+      <a class="nav-link active nav-cta" href="donaciones.html">Donar</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Diezmo y Ofrenda</h1>
+    <p>"Dios ama al dador alegre." — 2 Corintios 9:7</p>
+  </div>
+
+  <main>
+
+    <section class="section">
+      <p class="section-label">Cómo ofrendar</p>
+      <h2>Donar por Zelle</h2>
+      <p class="section-subtitle">IBRD utiliza Zelle como plataforma principal para recibir donaciones.</p>
+
+      <div class="cards">
+        <div class="card">
+          <p>Les pedimos amablemente que cancelen cualquier pago recurrente configurado en <strong>Kindrid</strong> y realicen sus contribuciones a través de Zelle, usando el correo:</p>
+          <p style="margin-top:16px; font-size:18px; font-weight:700; color: var(--green-accent);">cuentas.ibrdnj@gmail.com</p>
+          <p style="margin-top:16px;" class="muted">O escanea el código QR con tu teléfono.</p>
+          <div style="margin-top:20px;">
+            <a class="btn btn-primary btn-small" href="https://www.zellepay.com/get-started" target="_blank" rel="noreferrer">Comenzar con Zelle</a>
+          </div>
+        </div>
+        <div class="card" style="display:flex; align-items:center; justify-content:center;">
+          <img
+            src="assets/images/zelle-qr.png"
+            alt="Código QR de Zelle para donar a IBRD"
+            style="width:220px; max-width:100%; border-radius:10px; border:1px solid var(--border);"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-block">
+      <blockquote>"Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre."</blockquote>
+      <cite>2 Corintios 9:7</cite>
+    </div>
+
+    <section class="section-alt">
+      <div class="section-inner">
+        <p class="section-label">Preguntas frecuentes</p>
+        <h2>Sobre Zelle</h2>
+        <div class="cards" style="margin-top: 32px;">
+          <div class="card">
+            <h3>¿Qué es Zelle?</h3>
+            <p class="muted">Zelle es una forma de enviar dinero directamente entre cuentas bancarias en EE. UU., típicamente en minutos, con solo un correo o número de teléfono.</p>
+          </div>
+          <div class="card">
+            <h3>¿Hay tarifas?</h3>
+            <p class="muted">Zelle no cobra tarifas por enviar o recibir dinero. Confirma con tu banco si aplica algún cargo adicional.</p>
+          </div>
+          <div class="card">
+            <h3>¿Es seguro?</h3>
+            <p class="muted">Zelle utiliza funciones de autenticación y monitoreo para proteger tus pagos, ya sea desde su app o desde la banca en línea de tu banco.</p>
+          </div>
+          <div class="card">
+            <h3>¿Sin smartphone?</h3>
+            <p class="muted">Si tu banco ofrece Zelle, puedes usarlo desde su sitio web de banca en línea sin necesidad de un teléfono inteligente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-name">Iglesia Bautista Resurrección</div>
+    <div class="footer-info">203 Washington Ave, Dumont, NJ 07628 &nbsp;•&nbsp; ibrdnj@gmail.com</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('navToggle').addEventListener('click', () =>
+      document.getElementById('mainNav').classList.toggle('open'));
+  </script>
+</body>
+</html>

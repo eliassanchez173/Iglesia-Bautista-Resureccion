@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Iglesia Bautista Resurrección en Dumont, NJ. Cultos los domingos a las 12pm. Una comunidad que glorifica a Dios con amor y servicio." />
+  <meta property="og:title" content="Iglesia Bautista Resurrección" />
+  <meta property="og:description" content="Una comunidad que glorifica a Dios en Dumont, NJ." />
+  <meta property="og:type" content="website" />
+  <title>Iglesia Bautista Resurrección</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="/assets/images/Logo.png" />
+</head>
+<body>
+
+  <!-- Alert Modal -->
+  <div class="modal-backdrop" id="alertBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alertTitle">
+      <h2 id="alertTitle">Aviso Importante</h2>
+      <p id="alertMessage"></p>
+      <button class="btn btn-primary" id="alertCloseBtn" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header" id="siteHeader">
+    <a href="index.html" class="brand">
+      <span class="brand-title">Iglesia Bautista</span>
+      <span class="brand-subtitle">Resurrección</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <a class="nav-link active" href="index.html">Inicio</a>
+      <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+      <a class="nav-link" href="actividades.html">Actividades</a>
+      <a class="nav-link" href="calendario.html">Calendario</a>
+      <a class="nav-link" href="fotos.html">Fotos</a>
+      <a class="nav-link nav-cta" href="donaciones.html">Donar</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <span class="hero-eyebrow">Dumont, New Jersey</span>
+        <h1>Bienvenidos a la familia de Dios</h1>
+        <p>Un lugar donde puedes conocer a Dios, crecer en fe, y caminar junto a otros en Cristo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#visita">Planifica tu visita</a>
+          <a class="btn btn-outline" href="actividades.html">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── INFO BAR ─── -->
+    <div class="info-bar">
+      <div class="info-bar-item">
+        <div>
+          <span class="label">Culto Principal</span>
+          <span class="value">Domingos • 12:00 pm</span>
+        </div>
+      </div>
+      <div class="info-bar-divider"></div>
+      <div class="info-bar-item">
+        <div>
+          <span class="label">Escuela Dominical</span>
+          <span class="value">Domingos • 11:00 am</span>
+        </div>
+      </div>
+      <div class="info-bar-divider"></div>
+      <div class="info-bar-item">
+        <div>
+          <span class="label">Oración</span>
+          <span class="value">Miércoles • 7:30 pm</span>
+        </div>
+      </div>
+      <div class="info-bar-divider"></div>
+      <div class="info-bar-item">
+        <div>
+          <span class="label">Ubicación</span>
+          <span class="value">203 Washington Ave, Dumont NJ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── LIVE STREAM ─── -->
+    <section class="section-alt">
+      <div class="section-inner">
+        <p class="section-label text-center">En Vivo &amp; Predicaciones</p>
+        <h2 class="text-center" style="margin-bottom: 8px;">Últimos Mensajes</h2>
+        <p class="section-subtitle text-center" style="margin: 0 auto 40px;">Únete a nosotros en línea o mira el mensaje más reciente.</p>
+
+        <script>
+          const YOUTUBE_API_KEY = "AIzaSyAK6y45sV4UN1w594PydR49rj8E8gxFOHk";
+          const CHANNEL_ID = "UC_OuOoQS6fxAQX33BjJDUjA";
+        </script>
+
+        <div id="church-stream">
+          <div class="video-wrapper">
+            <iframe id="yt-frame" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+          </div>
+          <p class="stream-label" id="stream-label">Cargando...</p>
+        </div>
+
+        <script>
+          async function loadStream() {
+            const frame = document.getElementById("yt-frame");
+            const label = document.getElementById("stream-label");
+            try {
+              const liveRes = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&eventType=live&type=video&key=${YOUTUBE_API_KEY}`);
+              const liveData = await liveRes.json();
+              if (liveData.items && liveData.items.length > 0) {
+                frame.src = `https://www.youtube.com/embed/${liveData.items[0].id.videoId}?autoplay=1`;
+                label.innerHTML = '🔴 &nbsp;En vivo ahora';
+                label.style.color = '#cc0000';
+              } else {
+                const latestRes = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&type=video&maxResults=1&key=${YOUTUBE_API_KEY}`);
+                const latestData = await latestRes.json();
+                if (latestData.items && latestData.items.length > 0) {
+                  frame.src = `https://www.youtube.com/embed/${latestData.items[0].id.videoId}`;
+                  label.textContent = latestData.items[0].snippet.title;
+                }
+              }
+            } catch(e) {
+              label.textContent = 'No se pudo cargar el video.';
+            }
+          }
+          loadStream();
+        </script>
+      </div>
+    </section>
+
+    <!-- ─── PLAN YOUR VISIT ─── -->
+    <section class="section" id="visita">
+      <p class="section-label">Nuevo aquí</p>
+      <h2>Planifica tu visita</h2>
+      <p class="section-subtitle">Te esperamos con los brazos abiertos. Aquí encontrarás lo que necesitas saber.</p>
+      <div class="cards">
+        <div class="card card-accent">
+          <h3>📍 Ubicación</h3>
+          <p>203 Washington Ave<br>Dumont, NJ 07628</p>
+          <p style="margin-top: 14px;">
+            <a class="btn btn-outline-dark btn-small" href="https://maps.google.com/?q=203+Washington+Ave+Dumont+NJ" target="_blank" rel="noreferrer">Ver en Google Maps</a>
+          </p>
+        </div>
+        <div class="card card-accent">
+          <h3>🕒 Horarios</h3>
+          <p><strong>Escuela Dominical</strong> — Dom. 11:00 am</p>
+          <p><strong>Culto Principal</strong> — Dom. 12:00 pm</p>
+          <p><strong>Culto de Oración</strong> — Mié. 7:30 pm</p>
+        </div>
+        <div class="card card-accent">
+          <h3>🙏 Qué esperar</h3>
+          <p>Un ambiente familiar, enseñanza bíblica fiel, y adoración centrada en Cristo. Todos son bienvenidos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── QUOTE ─── -->
+    <div class="quote-block">
+      <blockquote>
+        "Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre."
+      </blockquote>
+      <cite>2 Corintios 9:7</cite>
+    </div>
+
+    <!-- ─── MINISTERIOS ─── -->
+    <section class="section">
+      <p class="section-label">Comunidad</p>
+      <h2>Ministerios</h2>
+      <p class="section-subtitle">Hay un lugar para cada persona en nuestra congregación.</p>
+      <div class="grid">
+        <div class="tile">Adoración</div>
+        <div class="tile">Oración</div>
+        <div class="tile">Evangelismo</div>
+        <div class="tile">Comunión</div>
+        <div class="tile">Servicio</div>
+        <div class="tile">Enseñanza</div>
+        <div class="tile">Jóvenes</div>
+        <div class="tile">Niños</div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACTO ─── -->
+    <section class="section-alt">
+      <div class="section-inner">
+        <p class="section-label">Contáctanos</p>
+        <h2>Estamos aquí para ti</h2>
+        <p class="section-subtitle">¿Tienes preguntas? Escríbenos o visítanos.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Información</h3>
+            <p><strong>Dirección:</strong> 203 Washington Ave, Dumont, NJ 07628</p>
+            <p style="margin-top:10px;"><strong>Email:</strong> <a href="mailto:ibrdnj@gmail.com" style="color: var(--green-accent);">ibrdnj@gmail.com</a></p>
+            <p style="margin-top:6px;"><strong>Tel:</strong> <a href="tel:+12013878111" style="color: var(--green-accent);">(201) 387-8111</a></p>
+            <p style="margin-top:20px;">
+              <a class="btn btn-outline-dark btn-small" href="donaciones.html">Donar por Zelle</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Envíanos un mensaje</h3>
+            <form name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
+              <label>Nombre<input name="name" type="text" required /></label>
+              <label>Email<input name="email" type="email" required /></label>
+              <label>Mensaje<textarea name="message" rows="4" required></textarea></label>
+              <button class="btn btn-primary" type="submit" style="margin-top: 16px;">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <div class="footer-name">Iglesia Bautista Resurrección</div>
+    <div class="footer-info">203 Washington Ave, Dumont, NJ 07628 &nbsp;•&nbsp; ibrdnj@gmail.com &nbsp;•&nbsp; (201) 387-8111</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Sticky header shadow on scroll
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const nav = document.getElementById('mainNav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+</body>
+</html>
