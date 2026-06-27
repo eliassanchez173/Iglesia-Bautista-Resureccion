@@ -18,6 +18,8 @@
      --border:       #e0e0d8;
      --card-bg:      #ffffff;
      --section-bg:   #f9f9f6;
+     --vbs-orange:       #f4a73b;
+     --vbs-orange-light: #f7bc66;
    }
    
    * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -601,6 +603,82 @@
    .live-badge { color: #cc0000; font-weight: 700; margin-top: 10px; }
    .text-center { text-align: center; }
    
+   /* ─── VBS: NAV BADGE ─────────────────────────── */
+
+   .nav-link.nav-vbs {
+     background: var(--vbs-orange);
+     color: var(--green-dark);
+     margin-left: 8px;
+     border-radius: 4px;
+     font-weight: 700;
+   }
+   .nav-link.nav-vbs:hover { background: var(--vbs-orange-light); color: var(--green-dark); }
+
+   /* ─── VBS: BANNER ────────────────────────────── */
+
+   .vbs-banner {
+     display: none;
+     align-items: center;
+     justify-content: center;
+     gap: 14px;
+     flex-wrap: wrap;
+     background: var(--vbs-orange);
+     color: var(--green-dark);
+     text-align: center;
+     padding: 12px 20px;
+     font-size: 14px;
+     font-weight: 600;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 110;
+   }
+   .vbs-banner.show { display: flex; }
+   .site-header { top: 0; transition: top 0.2s, background 0.3s; }
+   body.has-vbs-banner .site-header { top: var(--vbs-banner-height, 0px); }
+   .vbs-banner a.vbs-banner-link {
+     color: var(--green-dark);
+     text-decoration: underline;
+     font-weight: 700;
+     white-space: nowrap;
+   }
+   .vbs-banner-close {
+     position: absolute;
+     right: 14px;
+     top: 50%;
+     transform: translateY(-50%);
+     background: none;
+     border: none;
+     font-size: 18px;
+     line-height: 1;
+     color: var(--green-dark);
+     cursor: pointer;
+     padding: 4px 8px;
+   }
+
+   /* ─── VBS: POPUP (accent variant of .modal) ──── */
+
+   .modal.modal-vbs { border: none; border-top: 6px solid var(--vbs-orange); text-align: center; }
+   .modal-vbs .modal-eyebrow {
+     font-size: 12px;
+     font-weight: 700;
+     letter-spacing: 0.12em;
+     text-transform: uppercase;
+     color: var(--green-accent);
+     margin-bottom: 8px;
+     display: block;
+   }
+   .modal-vbs h2 { font-size: 26px; }
+   .modal-vbs p { color: var(--text-mid); margin-bottom: 18px; }
+   .modal-vbs .modal-actions {
+     display: flex;
+     gap: 10px;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin-top: 6px;
+   }
+
    /* ─── ANIMATIONS ─────────────────────────────── */
    
    @keyframes fadeUp {
@@ -617,7 +695,7 @@
      .nav.open {
        display: flex;
        position: absolute;
-       top: 68px; left: 0; right: 0;
+       top: calc(68px + var(--vbs-banner-height, 0px)); left: 0; right: 0;
        background: var(--green-dark);
        padding: 12px 0 20px;
        border-top: 1px solid rgba(255,255,255,0.1);
@@ -625,8 +703,12 @@
    
      .nav-link { padding: 12px 24px; border-radius: 0; width: 100%; }
      .nav-link.nav-cta { margin: 8px 24px 0; width: auto; }
+     .nav-link.nav-vbs { margin: 8px 24px 0; width: auto; }
    
      .nav-toggle { display: flex; }
+   
+     .vbs-banner { font-size: 13px; padding: 10px 44px; }
+     .vbs-banner-close { right: 6px; }
    
      .info-bar { gap: 24px; }
      .info-bar-divider { display: none; }

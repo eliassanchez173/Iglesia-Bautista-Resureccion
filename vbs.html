@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Estación Iluminación, Escuela Bíblica de Vacaciones en Iglesia Bautista Resurrección, Dumont, NJ. 29 de junio al 3 de julio." />
+  <title>Estación Iluminación • Iglesia Bautista Resurrección</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="/assets/images/Logo.png" />
+</head>
+<body>
+
+  <!-- VBS Banner -->
+  <div class="vbs-banner" id="vbsBanner">
+    <span id="vbsBannerText"></span>
+    <a class="vbs-banner-link" id="vbsBannerLink" href="vbs.html"></a>
+    <button class="vbs-banner-close" id="vbsBannerCloseBtn" type="button" aria-label="Cerrar">&times;</button>
+  </div>
+
+  <!-- VBS Popup -->
+  <div class="modal-backdrop" id="vbsBackdrop" aria-hidden="true">
+    <div class="modal modal-vbs" role="dialog" aria-modal="true" aria-labelledby="vbsModalTitle">
+      <span class="modal-eyebrow">Próximamente</span>
+      <h2 id="vbsModalTitle"></h2>
+      <p id="vbsModalDates"></p>
+      <div class="modal-actions">
+        <a class="btn btn-primary" id="vbsModalCta" href="vbs.html">Más información</a>
+        <button class="btn btn-outline-dark" id="vbsCloseBtn" type="button">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="alertBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alertTitle">
+      <h2 id="alertTitle">Aviso Importante</h2>
+      <p id="alertMessage"></p>
+      <button class="btn btn-primary" id="alertCloseBtn" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a href="index.html" class="brand">
+      <span class="brand-title">Iglesia Bautista</span>
+      <span class="brand-subtitle">Resurrección</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav">
+      <a class="nav-link" href="index.html">Inicio</a>
+      <a class="nav-link" href="quienes-somos.html">Quiénes Somos</a>
+      <a class="nav-link" href="actividades.html">Actividades</a>
+      <a class="nav-link" href="calendario.html">Calendario</a>
+      <a class="nav-link" href="fotos.html">Fotos</a>
+      <a class="nav-link nav-vbs active" href="vbs.html">VBS</a>
+      <a class="nav-link nav-cta" href="donaciones.html">Donar</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Estación Iluminación</h1>
+    <p>Escuela Bíblica de Vacaciones &nbsp;•&nbsp; 29 de Junio – 3 de Julio &nbsp;•&nbsp; 6:00–9:00 pm &nbsp;•&nbsp; Pre-K a Adultos</p>
+  </div>
+
+  <!-- ─── POSTER IMAGE ───
+       PLACEHOLDER: replace src below with the real VBS poster once uploaded.
+       Suggested path: assets/images/vbs-poster.png (or .jpg)
+  -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="card" style="max-width: 700px; margin: 0 auto; padding: 0; overflow: hidden; text-align: center;">
+      <img
+        src="assets/images/vbs-poster.png"
+        alt="Afiche de Estación Iluminación, Escuela Bíblica de Vacaciones"
+        style="width:100%; display:block;"
+        onerror="this.closest('.card').innerHTML = '<p class=\'muted\' style=\'padding:60px 20px;\'>🖼️ Aquí va el afiche de Estación Iluminación<br><span style=\'font-size:13px;\'>(sube la imagen a assets/images/vbs-poster.png)</span></p>';"
+      />
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ─── OVERVIEW ─── -->
+    <section class="section">
+      <p class="section-label">Este verano</p>
+      <h2>Una semana llena de fe, diversión, y comunidad</h2>
+      <p class="section-subtitle">Este verano aprenderemos quién es Jesús realmente y cómo su luz trae esperanza al mundo.</p>
+      <div class="cards">
+        <div class="card card-accent">
+          <h3>📅 Fechas</h3>
+          <p><strong>Lunes 29 de junio</strong> – <strong>Viernes 3 de julio</strong></p>
+          <p class="muted" style="margin-top:8px;">6:00 pm – 9:00 pm cada noche</p>
+        </div>
+        <div class="card card-accent">
+          <h3>🙌 Para todos</h3>
+          <p><strong>Pre-K a Adultos</strong></p>
+          <p class="muted" style="margin-top:8px;">Toda la familia es bienvenida — hay un lugar para cada edad.</p>
+        </div>
+        <div class="card card-accent">
+          <h3>📍 Lugar</h3>
+          <p>203 Washington Ave<br>Dumont, NJ 07628</p>
+          <p style="margin-top:10px;">
+            <a class="btn btn-outline-dark btn-small" href="https://maps.google.com/?q=203+Washington+Ave+Dumont+NJ" target="_blank" rel="noreferrer">Ver en Google Maps</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── VERSE ─── -->
+    <div class="quote-block">
+      <blockquote>
+        "Otra vez Jesús les habló, diciendo: Yo soy la luz del mundo; el que me sigue, no andará en tinieblas, sino que tendrá la luz de la vida."
+      </blockquote>
+      <cite>Juan 8:12</cite>
+    </div>
+
+    <!-- ─── WHAT TO EXPECT ─── -->
+    <section class="section-alt">
+      <div class="section-inner">
+        <p class="section-label">Qué esperar</p>
+        <h2>Cada noche incluye</h2>
+        <div class="grid">
+          <div class="tile">Lección bíblica</div>
+          <div class="tile">Juegos y actividades</div>
+          <div class="tile">Manualidades</div>
+          <div class="tile">Música y alabanza</div>
+          <div class="tile">Merienda</div>
+          <div class="tile">Comunión y compañerismo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── REGISTRATION ─── -->
+    <section class="section-alt">
+      <div class="section-inner">
+        <p class="section-label">Inscripción</p>
+        <h2>Reserva tu lugar</h2>
+        <p class="section-subtitle">Escanea el código QR para inscribirte — la inscripción es gratuita y abierta a toda la familia.</p>
+        <div class="cards">
+          <!-- ─── REGISTRATION POSTER / QR PLACEHOLDER ───
+               PLACEHOLDER: replace src below with the real registration poster (with QR code) once uploaded.
+               Suggested path: assets/images/vbs-registro-qr.png
+          -->
+          <div class="card" style="display:flex; align-items:center; justify-content:center; padding: 0; overflow: hidden;">
+            <img
+              src="assets/images/vbs-registro-qr.png"
+              alt="Código QR para inscribirse a Estación Iluminación"
+              style="width:100%; max-width:320px; display:block; margin: 24px auto;"
+              onerror="this.closest('.card').innerHTML = '<p class=\'muted\' style=\'padding:60px 20px; text-align:center;\'>📱 Aquí va el afiche con el código QR de inscripción<br><span style=\'font-size:13px;\'>(sube la imagen a assets/images/vbs-registro-qr.png)</span></p>';"
+            />
+          </div>
+          <div class="card">
+            <h3>¿Preguntas?</h3>
+            <p>Escríbenos o llámanos y con gusto te ayudamos.</p>
+            <p style="margin-top:14px;"><strong>Email:</strong> <a href="mailto:ibrdnj@gmail.com" style="color: var(--green-accent);">ibrdnj@gmail.com</a></p>
+            <p style="margin-top:6px;"><strong>Tel:</strong> <a href="tel:+12013878111" style="color: var(--green-accent);">(201) 387-8111</a></p>
+            <hr class="divider" />
+            <h3>¿Quieres ser voluntario?</h3>
+            <p class="muted">Siempre necesitamos manos extra durante la semana de VBS. Contáctanos si quieres servir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-name">Iglesia Bautista Resurrección</div>
+    <div class="footer-info">203 Washington Ave, Dumont, NJ 07628 &nbsp;•&nbsp; ibrdnj@gmail.com &nbsp;•&nbsp; (201) 387-8111</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('navToggle').addEventListener('click', () =>
+      document.getElementById('mainNav').classList.toggle('open'));
+  </script>
+</body>
+</html>

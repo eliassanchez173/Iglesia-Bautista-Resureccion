@@ -8,7 +8,25 @@
   <link rel="icon" type="image/png" href="/assets/images/Logo.png" />
 </head>
 <body>
+<!-- VBS Banner -->
+<div class="vbs-banner" id="vbsBanner">
+  <span id="vbsBannerText"></span>
+  <a class="vbs-banner-link" id="vbsBannerLink" href="vbs.html"></a>
+  <button class="vbs-banner-close" id="vbsBannerCloseBtn" type="button" aria-label="Cerrar">&times;</button>
+</div>
 
+<!-- VBS Popup -->
+<div class="modal-backdrop" id="vbsBackdrop" aria-hidden="true">
+  <div class="modal modal-vbs" role="dialog" aria-modal="true" aria-labelledby="vbsModalTitle">
+    <span class="modal-eyebrow">Próximamente</span>
+    <h2 id="vbsModalTitle"></h2>
+    <p id="vbsModalDates"></p>
+    <div class="modal-actions">
+      <a class="btn btn-primary" id="vbsModalCta" href="vbs.html">Más información</a>
+      <button class="btn btn-outline-dark" id="vbsCloseBtn" type="button">Cerrar</button>
+    </div>
+  </div>
+</div>
   <div class="modal-backdrop" id="alertBackdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alertTitle">
       <h2 id="alertTitle">Aviso Importante</h2>
@@ -31,6 +49,7 @@
       <a class="nav-link" href="actividades.html">Actividades</a>
       <a class="nav-link" href="calendario.html">Calendario</a>
       <a class="nav-link" href="fotos.html">Fotos</a>
+      <a class="nav-link nav-vbs" href="vbs.html">VBS</a>
       <a class="nav-link active nav-cta" href="donaciones.html">Donar</a>
     </nav>
   </header>
