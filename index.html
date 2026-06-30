@@ -66,6 +66,14 @@
 
     <!-- ─── HERO ─── -->
     <section class="hero">
+      <div class="hero-slideshow" aria-hidden="true">
+        <div class="hero-slide" style="background-image: url('assets/images/slideshow1.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/slideshow2.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/slideshow3.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/slideshow4.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/slideshow5.avif');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/slideshow6.avif');"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="hero-inner">
         <span class="hero-eyebrow">Dumont, New Jersey</span>
@@ -121,12 +129,15 @@
           const CHANNEL_ID = "UC_OuOoQS6fxAQX33BjJDUjA";
         </script>
 
-        <div id="church-stream">
-          <div class="video-wrapper">
-            <iframe id="yt-frame" allowfullscreen allow="autoplay; encrypted-media"></iframe>
-          </div>
-          <p class="stream-label" id="stream-label">Cargando...</p>
-        </div>
+<div id="church-stream">
+  <div class="video-wrapper">
+    <iframe id="yt-frame" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+  </div>
+  <p class="stream-label" id="stream-label">Cargando...</p>
+  <div class="stream-actions">
+    <a class="btn btn-primary" href="https://www.youtube.com/ibresurreccion" target="_blank" rel="noreferrer">Visitar YouTube</a>
+  </div>
+</div>
 
         <script>
           async function loadStream() {
@@ -166,7 +177,7 @@
           <h3>📍 Ubicación</h3>
           <p>203 Washington Ave<br>Dumont, NJ 07628</p>
           <p style="margin-top: 14px;">
-            <a class="btn btn-outline-dark btn-small" href="https://maps.google.com/?q=203+Washington+Ave+Dumont+NJ" target="_blank" rel="noreferrer">Ver en Google Maps</a>
+            <a class="btn btn-outline-dark btn-small" href="https://www.google.com/maps/search/?api=1&query=Iglesia+Bautista+Resurrecci%C3%B3n+203+Washington+Ave+Dumont+NJ+07628" target="_blank" rel="noreferrer">Ver perfil en Google Maps</a>
           </p>
         </div>
         <div class="card card-accent">
@@ -216,9 +227,20 @@
         <div class="cards">
           <div class="card">
             <h3>Información</h3>
-            <p><strong>Dirección:</strong> 203 Washington Ave, Dumont, NJ 07628</p>
+            <p><strong>Dirección:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Iglesia+Bautista+Resurrecci%C3%B3n+203+Washington+Ave+Dumont+NJ+07628" target="_blank" rel="noreferrer" style="color: var(--green-accent);">203 Washington Ave, Dumont, NJ 07628</a></p>
             <p style="margin-top:10px;"><strong>Email:</strong> <a href="mailto:ibrdnj@gmail.com" style="color: var(--green-accent);">ibrdnj@gmail.com</a></p>
             <p style="margin-top:6px;"><strong>Tel:</strong> <a href="tel:+12013878111" style="color: var(--green-accent);">(201) 387-8111</a></p>
+            <div class="social-links" aria-label="Redes sociales">
+              <a href="https://www.facebook.com/ibresurreccion" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <img src="assets/images/facebook.png" alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/ibresurreccion" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <img src="assets/images/instagram.png" alt="Instagram" />
+              </a>
+              <a href="https://www.youtube.com/ibresurreccion" target="_blank" rel="noreferrer" aria-label="YouTube">
+                <img src="assets/images/youtube.png" alt="YouTube" />
+              </a>
+            </div>
             <p style="margin-top:20px;">
               <a class="btn btn-outline-dark btn-small" href="donaciones.html">Donar por Zelle</a>
             </p>
@@ -242,7 +264,13 @@
   <!-- ─── FOOTER ─── -->
   <footer class="site-footer">
     <div class="footer-name">Iglesia Bautista Resurrección</div>
-    <div class="footer-info">203 Washington Ave, Dumont, NJ 07628 &nbsp;•&nbsp; ibrdnj@gmail.com &nbsp;•&nbsp; (201) 387-8111</div>
+    <div class="footer-info">
+      <a href="https://www.google.com/maps/search/?api=1&query=Iglesia+Bautista+Resurrecci%C3%B3n+203+Washington+Ave+Dumont+NJ+07628" target="_blank" rel="noreferrer">203 Washington Ave, Dumont, NJ 07628</a>
+      <span>&nbsp;•&nbsp;</span>
+      <a href="mailto:ibrdnj@gmail.com">ibrdnj@gmail.com</a>
+      <span>&nbsp;•&nbsp;</span>
+      <a href="tel:+12013878111">(201) 387-8111</a>
+    </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
